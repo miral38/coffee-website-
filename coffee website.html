@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miral Coffee | Premium Blend</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --maroon: #631D36;
+            --dark-maroon: #4A1528;
+            --cream: #FFFFFF;
+            --soft-pink: #D8B4C0;
+            --light-pink: #E8D5DC;
+            --salmon: #E88D7F;
+            --text-gray: #444;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
+        body { background-color: var(--cream); overflow-x: hidden; }
+
+        /* --- NAVIGATION --- */
+        header { background-color: var(--maroon); padding: 25px 8%; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; }
+        .logo { color: white; font-size: 22px; font-weight: 700; letter-spacing: 2px; }
+        .nav-links { display: flex; list-style: none; }
+        .nav-links li { margin-left: 25px; }
+        .nav-links a { color: white; text-decoration: none; font-size: 14px; font-weight: 400; }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background-color: var(--maroon);
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            padding: 40px 8% 0;
+            position: relative;
+            color: white;
+            flex-wrap: wrap;
+        }
+        .hero-content { flex: 1; min-width: 300px; z-index: 2; padding-bottom: 60px; }
+        .hero-content h1 { font-size: 48px; line-height: 1.1; margin-bottom: 25px; font-weight: 700; }
+        .hero-content p { font-size: 17px; max-width: 480px; margin-bottom: 35px; line-height: 1.5; }
+
+        .hero-image { flex: 1; display: flex; justify-content: center; min-width: 300px; padding-bottom: 60px; }
+        .hero-image img { 
+            width: 420px; height: 420px; border-radius: 50%; object-fit: cover; 
+            border: 12px solid rgba(255,255,255,0.1); 
+        }
+
+        /* --- THE WAVE (FIXED) --- */
+        .wave-container {
+            position: relative;
+            width: 100%;
+            background-color: var(--maroon);
+            line-height: 0;
+            margin-top: -2px; 
+        }
+        .wave-container svg {
+            position: relative;
+            display: block;
+            width: calc(150% + 1.3px);
+            height: 120px;
+        }
+        .wave-fill { fill: var(--cream); }
+        .wave-accent { fill: rgba(255, 255, 255, 0.15); }
+
+        .btn-primary {
+            background-color: var(--dark-maroon); color: white;
+            padding: 14px 28px; border-radius: 50px;
+            text-decoration: none; display: inline-block; font-weight: 700; font-size: 15px;
+        }
+
+        /* --- MENU SECTION --- */
+        .menu-section { padding: 100px 8%; }
+        .menu-grid { display: flex; align-items: center; gap: 60px; flex-wrap: wrap; }
+        .menu-images { flex: 1; display: flex; gap: 20px; justify-content: center; position: relative; }
+        .floating-img { width: 240px; border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); height: 320px; object-fit: cover; }
+        .img-offset { margin-top: -40px; }
+        .menu-text h2 { color: var(--maroon); font-size: 42px; margin-bottom: 20px; line-height: 1.1; }
+        .menu-text p { color: var(--text-gray); margin-bottom: 30px; font-size: 16px; }
+
+        /* --- STORY & SUSTAINABILITY --- */
+        .content-block { padding: 40px 0; }
+        .flex-card { display: flex; align-items: stretch; overflow: hidden; min-height: 450px; }
+        
+        .story-card { background-color: var(--light-pink); border-radius: 0 120px 120px 0; margin-right: 8%; flex-wrap: wrap-reverse; }
+        .sustain-card { background-color: var(--salmon); border-radius: 120px 0 0 120px; margin-left: 8%; flex-wrap: wrap; }
+        
+        .card-text { flex: 1; padding: 80px; min-width: 300px; }
+        .card-text h2 { color: var(--maroon); font-size: 34px; margin-bottom: 20px; }
+        .card-text p { line-height: 1.7; color: var(--text-gray); margin-bottom: 25px; }
+
+        .card-img { flex: 1; min-width: 300px; }
+        .card-img img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* --- FOOTER --- */
+        footer { background-color: var(--maroon); color: white; padding: 80px 8% 40px; }
+        .footer-grid { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 50px; padding-bottom: 50px; border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .footer-col h4 { font-size: 15px; margin-bottom: 25px; font-weight: 700; }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 12px; }
+        .footer-col a { color: white; text-decoration: none; opacity: 0.8; font-size: 14px; }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 40px; }
+        .footer-bottom p { font-size: 13px; opacity: 0.7; }
+        .socials i { margin-left: 20px; font-size: 20px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">MIRAL COFFEE</div>
+            <ul class="nav-links">
+                <li><a href="#">Our story</a></li>
+                <li><a href="#">Our menu</a></li>
+                <li><a href="#">Find a Miral</a></li>
+                <li><a href="#">Order online</a></li>
+                <li><a href="#">Sustainability</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>The better the coffee,<br>the brighter the day</h1>
+            <p>Brewing another reason to fall in love with the beautiful spirit of coffee. Visit our outlets today.</p>
+            <a href="#" class="btn-primary">Find a Miral <i class="fas fa-caret-right" style="margin-left: 8px;"></i></a>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=800" alt="Coffee">
+        </div>
+    </section>
+
+    <div class="wave-container">
+        <svg preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+            <path class="wave-accent" d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z"/>
+            <path class="wave-fill" d="M0 120h1200V52.47c-87-66.76-210.51-27.47-313.1 12.87-34.6 11.5-68.3 23.34-104.45 29.34-71.1 11.8-140.13 4.92-209.4-13.08-70.66-18.38-144.36-39.62-218.2-35.26-70.47 4.19-136.44 32.13-206.8 37.5-54.41 4.17-110.21-5.8-158-28V120z"/>
+        </svg>
+    </div>
+
+    <section class="menu-section">
+        <div class="menu-grid">
+            <div class="menu-images">
+                <img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=400" class="floating-img img-offset" alt="Coffee">
+                <img src="https://images.pexels.com/photos/1603901/pexels-photo-1603901.jpeg?auto=compress&cs=tinysrgb&w=400" class="floating-img" alt="Food">
+            </div>
+            <div class="menu-text">
+                <h2>Crafted with love,<br>served with passion</h2>
+                <p>Whatever your diet or preferences, there's enough choice for everyone.</p>
+                <a href="#" class="btn-primary">Our menu <i class="fas fa-caret-right" style="margin-left: 8px;"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <div class="content-block">
+        <div class="flex-card story-card">
+            <div class="card-text">
+                <h2>Our Story</h2>
+                <p>It began with the desire to make great coffee. We went on to blind-test 112 different variations before arriving at the perfect one—the signature blend that remains our pride to this day.</p>
+                <a href="#" class="btn-primary" style="background: transparent; color: var(--maroon); border: 2px solid var(--maroon);">Get the full story</a>
+            </div>
+            <div class="card-img">
+                <img src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Barista">
+            </div>
+        </div>
+    </div>
+
+    <div class="content-block">
+        <div class="flex-card sustain-card">
+            <div class="card-img">
+                <img src="https://images.pexels.com/photos/1144410/pexels-photo-1144410.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Farmers">
+            </div>
+            <div class="card-text">
+                <h2>Our Sustainability Efforts</h2>
+                <p>We are just as committed to our communities and the world we live in as we are about serving great coffee. From bean to cup, every step is responsible.</p>
+                <a href="#" class="btn-primary">Learn more</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>MIRAL COFFEE</h4>
+                <ul>
+                    <li><a href="#">Our coffees</a></li>
+                    <li><a href="#">Help and advice</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>DIETARY INFO</h4>
+                <ul>
+                    <li><a href="#">Detailed information</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>SUSTAINABILITY</h4>
+                <ul>
+                    <li><a href="#">Miral Foundation</a></li>
+                    <li><a href="#">Responsible Sourcing</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Miral Coffee. All rights reserved.</p>
+            <div class="socials">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
